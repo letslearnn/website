@@ -1,0 +1,311 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#balloon-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.balloon {
+  height: 125px;
+  width: 105px;
+  border-radius: 75% 75% 70% 70%;
+  position: relative;
+}
+
+.balloon:before {
+  content: "";
+  height: 75px;
+  width: 1px;
+  padding: 1px;
+  background-color: #fdfd96;
+  display: block;
+  position: absolute;
+  top: 125px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.balloon:after {
+  content: "▲";
+  text-align: center;
+  display: block;
+  position: absolute;
+  color: inherit;
+  top: 120px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300vh);
+    opacity: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  background-color: rgba(33, 33, 33, 0.9);
+  color: #ffffff;
+  display: block;
+  font: 14px/1.3 Arial, sans-serif;
+  height: 100vh;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+}
+header h2 {
+  font-size: 22px;
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 80%;
+  text-align: center;
+}
+header a,
+a:visited {
+  text-decoration: none;
+  color: #fcfcfc;
+}
+
+@keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-webkit-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-moz-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+@-ms-keyframes move-twink-back {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -10000px 5000px;
+  }
+}
+
+.stars,
+.twinkling {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.stars {
+  background: #000
+    url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat top
+    center;
+  z-index: 0;
+}
+
+.twinkling {
+  background: transparent
+    url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat
+    top center;
+  z-index: 1;
+
+  -moz-animation: move-twink-back 200s linear infinite;
+  -ms-animation: move-twink-back 200s linear infinite;
+  -o-animation: move-twink-back 200s linear infinite;
+  -webkit-animation: move-twink-back 200s linear infinite;
+  animation: move-twink-back 200s linear infinite;
+}
+
+/* Start the Animation */
+.start {
+  font-family: "Cookie", cursive;
+  font-size: 25px;
+  position: absolute;
+  padding: 20px;
+  background-color: #fdfd96;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition: transform 0.1s;
+}
+
+.start:hover {
+  transform: translate(-50%, -54%);
+}
+
+.start:active {
+  transform: translate(-50%, -52%);
+}
+
+.start:focus {
+  outline: none;
+}
+
+@keyframes remove {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -200%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(0);
+  }
+  25% {
+    opacity: 0.5;
+    transform: scale(0.2) rotate(1turn);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0.4) rotate(2turn);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(0.6) rotate(3turn);
+  }
+  100% {
+    transform: scale(1) rotate(3turn);
+  }
+}
+
+.heading {
+  font-family: "Sacramento", cursive;
+  font-weight: 500;
+  animation: rotate 2s forwards;
+  font-size: 70px;
+  position: absolute;
+  top: 45%;
+  left: 26%;
+}
+
+.prabha_img {
+  position: absolute;
+}
+
+.prabha_img.img_1 {
+  top: 0;
+  left: 0;
+  width: 20%;
+  animation: img_1 2s ease-in-out forwards;
+}
+
+.prabha_img.img_2 {
+  top: -50%;
+  right: -50%;
+  width: 20%;
+  animation: img_2 2s ease-in-out 1s forwards;
+}
+
+.prabha_img.img_3 {
+  bottom: -50%;
+  left: -50%;
+  width: 20%;
+  animation: img_3 2s ease-in-out 2s forwards;
+}
+
+.prabha_img.img_4 {
+  bottom: -50%;
+  right: -50%;
+  width: 10%;
+  animation: img_4 2s ease-in-out 3s forwards;
+}
+
+.naga {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 1s;
+}
+
+@keyframes img_1 {
+  from {
+    top: -50%;
+    left: -50%;
+  }
+  to {
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes img_2 {
+  from {
+    top: -50%;
+    right: -50%;
+  }
+  to {
+    top: 0;
+    right: 0;
+  }
+}
+
+@keyframes img_3 {
+  from {
+    bottom: -50%;
+    left: -50%;
+  }
+  to {
+    bottom: 0;
+    left: 0;
+  }
+}
+
+@keyframes img_4 {
+  from {
+    bottom: -50%;
+    right: -50%;
+  }
+  to {
+    bottom: 0;
+    right: 0;
+  }
+}
